@@ -30,6 +30,7 @@ You might even be able to unseat Hilda Spellman as Champion Bubbler!
 ---
 
 boilnbubbl is a fullstack MERN Single Page Application (Mongo, Express, React, Node.JS) that uses AJAX and websockets (socket.io) to implement a realtime multiplayer experience in **Face Off** mode. 
+
 For **Study Hall** mode boilnbubbl utilizes AJAX to implement single-page CRUD for notetaking.  
 
 
