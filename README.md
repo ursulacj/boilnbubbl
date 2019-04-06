@@ -18,7 +18,9 @@ The first to cause rancification loses!
 
 As a novice in a friendly setting, the loser won't be forced to drink the rancid spoils. Instead, the loser will be able to use the opportunity to learn and take notes about the stable formulas, strengthening their memories over time. 
 
-With time, careful observation, and practice, you can climb the ranks. 
+With time, careful observation, and practice, you can climb the ranks and go from Novice to Expert. 
 
-You might even unseat Hilda Spellman as Champion Bubbler!
+You might even be able to unseat Hilda Spellman as Champion Bubbler!
+
+
 
