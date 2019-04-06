@@ -23,8 +23,20 @@ With time, careful observation, and practice, you can climb the ranks and go fro
 You might even be able to unseat Hilda Spellman as Champion Bubbler!
 
 
---- 
+---
 
-## boilnbubbl features 
+## boilnbubbl technologies
+
+
+---
+
+## boilnbubble project planning 
+
+Project Planning Tools    |   Work Logs   |   Expansion Plans
+----------------------    |   ---------   |   ---------------
+Trello Link               |   Problems    |   bubblnboil v 1.2 
+
+
+
 
 
