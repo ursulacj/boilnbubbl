@@ -34,7 +34,7 @@ You might even be able to unseat Hilda Spellman as Champion Bubbler!
 
 Project Planning Tools    |   Work Logs   |   Expansion Plans
 ----------------------    |   ---------   |   ---------------
-[Trello](https://trello.com/b/0FbilqxD/boil-n-bubble "Trello") |   Problems+Solutions    |   bubblnboil v 1.2 
+[Trello](https://trello.com/b/0FbilqxD/boil-n-bubble "Trello") |   Problems+Solutions    |   [bubblnboil v1.2](https://github.com/ursulacj/boilnbubbl/blob/UrsulaSandbox/public/projectPlanning/IceboxREADME.md "bubblnboil v1.2)
 
 
 
