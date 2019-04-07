@@ -7,6 +7,10 @@ const app = express();
 
 // Mount middleware here
 
+// Configure the dotenv
+require('dotenv').config();
+require('./config/database');
+
 app.use(logger('dev'));
 app.use(express.json());
 
