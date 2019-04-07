@@ -4,7 +4,7 @@
 
 
 ### Join Sabrina at the Academy of Unseen Arts! 
-### Face off against other novice witches and warlocks and test your potion-making skills in the Boil and Bubble Challenge in Professor Lovecraft's Potion's 101!
+### Face off against other novice witches and warlocks and test your potion-making skills in the Boil and Bubble Challenge in Professor Lovecraft's Potion's 101 class!
 
 ---
 
