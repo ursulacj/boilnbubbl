@@ -27,7 +27,6 @@ You might even be able to unseat Hilda Spellman as Champion Bubbler!
 
 ## boilnbubbl technologies
 
----
 
 boilnbubbl is a fullstack MERN Single Page Application (Mongo, Express, React, Node.JS).
 
