@@ -1,0 +1,36 @@
+.homePageWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5vmax;
+}
+
+.homeDescription {
+    border: 2px solid black;
+    margin: 0 15vmin;
+    padding: 3vmin;
+}
+
+.siteTitle {
+    font-size: 9vmax;
+    padding: none;
+    margin-bottom: -15px;
+    text-align: center;
+}
+
+.cauldron {
+    background: url(https://media.giphy.com/media/3o84TVYfCexBXk011u/source.gif) no-repeat center center fixed;
+    background-size: 90%;
+    margin-top: -35px;
+    width: 70vmin;
+    height: 70vmin;
+}
+
+/*-------------Full Screen Styling--------------*/
+
+@media only screen and (min-width: 961px) {
+    .homeDescription {
+        margin: 0 50vmin;
+    }
+    
+}
