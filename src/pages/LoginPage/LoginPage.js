@@ -13,14 +13,25 @@ class LoginPage extends Component {
 
 /*-----------------Event Handlers----------------*/ 
 
+// event to change the login/signup form's animation 
 handleSlideEffect = () => {
     console.log('click event handled!');
-
+    
     this.state.clicked ? this.setState({clicked: false}) : this.setState({clicked: true}); 
 }
 
+handleSubmit = (e) => {
+    e.preventDefault();
+}
+
+handleChange =  (e) => {
+    console.log('handleChange function triggered');
+}
+
+/*-----------------Render Function ----------------*/ 
     render() {
 
+        // variable to hold the classes triggered by the login  form's animated  toggle
         const loginContainer =  this.state.clicked  ? 'fullLoginContainer right-panel-active' : 'fullLoginContainer'; 
 
         return(
@@ -30,29 +41,35 @@ handleSlideEffect = () => {
                 <div className= {loginContainer}>
 
                     <div className="form-container sign-up-container">
-                        <form action="" className="loginForm">
+                        <form 
+                            onSubmit={this.handleSubmit}
+                            className="loginForm">
                             <h1 className="h1">Create an Account</h1>
                             <input 
                                 className="loginInput" 
                                 type="text" 
                                 placeholder="username" 
+                                onChange={this.handleChange}
                                 value={this.state.username}/>
                             <input 
                                 className="loginInput" 
                                 type="email" 
                                 placeholder="email" 
+                                onChange={this.handleChange}
                                 value={this.state.email}/>
                             <input 
                                 className="loginInput" 
                                 type="password"
                                 placeholder="password" 
+                                onChange={this.handleChange}
                                 value={this.state.password}/>
                             <button className="loginBtn">Sign Up</button>
                             
                         </form>
                     </div>   
                     <div className="form-container log-in-container">
-                        <form action="" className="loginForm">
+                        <form 
+                            onSubmit={this.handleSubmit} className="loginForm">
                             <h1 className="h1">Log In</h1>
                             <input 
                                 className="loginInput" 
