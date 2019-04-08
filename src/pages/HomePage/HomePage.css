@@ -30,7 +30,15 @@
 
 @media only screen and (min-width: 961px) {
     .homeDescription {
-        margin: 0 50vmin;
+        margin: 0 40vmin;
+    }
+    .siteTitle {
+        font-size: 7vmax;
+    }
+    .cauldron {
+        width: 110vmin;
+        height: 75vmin;
+        margin-top: -70px;
     }
     
 }

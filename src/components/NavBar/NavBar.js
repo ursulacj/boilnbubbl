@@ -7,11 +7,11 @@ const NavBar = () => {
         <div className="nav">
             <nav className="nav">
                 <div className="nav-wrapper nav">
-                <a href="#!" className="brand-logo nav">boilnbubbl</a>
+                <a href="/" className="center brand-logo nav">boilnbubbl</a>
                 <a href="#" data-target="mobile-demo" className="sidenav-trigger nav"><i className="material-icons nav">menu</i></a>
                 <ul className="right hide-on-med-and-down nav">
-                    <li><a href="sass.html nav">About</a></li>
-                    <li><a href="badges.html nav">Login/Sign Up</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="/login">Login/Sign Up</a></li>
                 
                 </ul>
                 </div>
