@@ -1,18 +1,11 @@
-
-
-
-
-
-
 .fullLoginContainer {
     background-color: white;
-    border-radius: 5px;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05), 0 10px 10px rgba(0, 0, 0, 0.07);
     position: relative;
     overflow: hidden;
     max-width: 100%;
-    min-height: 500px;
-    margin-top: 3vmax;
+    min-height: 667px;
+    border-top: 1px solid rgba(25,25,25, .15);
 }
 
 .form-container {

@@ -7,11 +7,14 @@ module.exports = {
 };
 
 async function signup(req, res) {
-    const user = newUser(req.body);
+    const user = new User(req.body);
     try {
         await user.save();
+        // send back a JSON web token 
+        const token = createJWT(user);
         res.json({ token });
     } catch (err) {
+        // send an error if the user submits a duplicate email or has any other form errors
         res.status(400).json(err);
     }
 }
