@@ -1,22 +1,23 @@
-import React, { Component } from 'react';
-import './FaceOffPage.css'
+import React, {Component} from 'react';
+import './GameTimer.css';
 
-class FaceOffPage extends Component {
+class GameTimer extends Component {
 
 /*--------------Event Handlers----------------*/
 
 /*--------------Lifecycle Methods----------------*/
 
 /*--------------Render Function----------------*/
-
 render() {
     return (
         <div>
-            <h1>FaceOffPage</h1>
+            timer
+            <div>00:00</div>
         </div>
     )
 }
 
 }
 
-export default FaceOffPage
+
+export default GameTimer;

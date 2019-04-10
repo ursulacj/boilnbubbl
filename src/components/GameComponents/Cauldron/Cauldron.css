@@ -1,0 +1,6 @@
+.cauldron{
+    width: 150px;
+    height: 150px;
+    border: 6px solid black;
+    border-radius: 50%; 
+}

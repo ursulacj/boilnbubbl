@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import './FaceOffPage.css'
+import './Cauldron.css'
 
-class FaceOffPage extends Component {
+
+class Cauldron extends Component {
 
 /*--------------Event Handlers----------------*/
 
@@ -11,12 +12,9 @@ class FaceOffPage extends Component {
 
 render() {
     return (
-        <div>
-            <h1>FaceOffPage</h1>
-        </div>
+        <div className="cauldron">CAULDRON PLACEHOLDER</div>
     )
 }
-
 }
 
-export default FaceOffPage
+export default Cauldron;

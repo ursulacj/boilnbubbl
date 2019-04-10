@@ -1,0 +1,17 @@
+.gamePlayMenu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.gameMenuBtn {
+    font-size: 12vmax !important;
+    color: mediumpurple;
+    margin: 25px;
+}
+
+/*-------------768 px + Styling--------------*/
+@media only screen and (min-width: 768px) {
+    .gameMenuBtn {
+        font-size: 6vmax !important;
+    }
+}

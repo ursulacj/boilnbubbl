@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import './FaceOffPage.css'
+import './NotesPage.css'
+import NavBar from '../../components/NavBar/NavBar'
 
-class FaceOffPage extends Component {
+class NotesPage extends Component {
 
 /*--------------Event Handlers----------------*/
 
@@ -12,11 +13,12 @@ class FaceOffPage extends Component {
 render() {
     return (
         <div>
-            <h1>FaceOffPage</h1>
+            <NavBar />
+            <h1>NotesPage</h1>
         </div>
     )
 }
 
 }
 
-export default FaceOffPage
+export default NotesPage

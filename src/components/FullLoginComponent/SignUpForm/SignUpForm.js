@@ -25,7 +25,7 @@ class SignUpForm extends Component {
         try { 
             await userService.signup(this.state);
             // If successfully signed up, render user dash
-            this.props.history.push('/user');
+            this.props.history.push('/');
         } catch (err) {
             // If invalid user data, render this
             this.props.updateMessage(err.message);
