@@ -4,7 +4,7 @@ import Ingredient from '../Ingredient/Ingredient';
 
 const IngredientRow = () => {
     return (
-        <div>
+        <div className="ingredientRow">
             <Ingredient />
             <Ingredient />
             <Ingredient />

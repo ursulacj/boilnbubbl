@@ -28,10 +28,11 @@ componentDidMount() {
     render() {
         return (
         <div className="gamePlayMenu">
-            <InstructionModal />
+            <Link to="/user"><i className="material-icons gameMenuBtn">arrow_back</i></Link>
 
             <h1 className="center">Study Hall</h1>
             
+            <InstructionModal />
             <SideNav />
                 
         </div>

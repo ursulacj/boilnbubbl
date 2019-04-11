@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import './NavBar.css'
+import './NavBar.css';
+import logo from './CauldronIcon.png';
 
 
 class NavBar extends Component {
@@ -19,7 +20,7 @@ class NavBar extends Component {
             <div className="nav">
                 <nav className="nav">
                     <div className="nav-wrapper nav">
-                        <a href="/" className="center brand-logo nav">boilnbubbl</a>
+                        <a href="/" className="center brand-logo nav"><img src={logo} alt="Cauldron Logo" className="cauldronLogo center"/></a>
                         <a href="#" data-target="mobile-demo" className="sidenav-trigger nav"><i className="material-icons nav">menu</i></a>
         
                         <ul className="left hide-on-med-and-down nav">

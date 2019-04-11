@@ -12,7 +12,7 @@ class Cauldron extends Component {
 
 render() {
     return (
-        <div className="cauldron">CAULDRON PLACEHOLDER</div>
+        <div className="cauldron"></div>
     )
 }
 }

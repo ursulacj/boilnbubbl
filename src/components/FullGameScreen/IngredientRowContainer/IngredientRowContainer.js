@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './IngredientContainer.css';
-import IngredientRow from '../../components/IngredientRow/IngredientRow';
+import './IngredientRowContainer.css';
+import IngredientRow from '../IngredientRow/IngredientRow';
 
 
 const IngredientContainer = () => {

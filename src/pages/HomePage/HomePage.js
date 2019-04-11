@@ -8,7 +8,7 @@ const HomePage = () => {
         <div>
             <NavBar />
             <div className= "homePageWrapper">
-                <div className="cauldron">
+                <div className="cauldronGif">
                     {/* <h1 className="siteTitle"> Boil N' Bubbl </h1> */}
                 </div>
                 <div className="homeDescription">

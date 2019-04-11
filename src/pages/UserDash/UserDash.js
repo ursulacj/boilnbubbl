@@ -16,8 +16,8 @@ class UserDash extends Component {
                         <h3>Select a Play Mode: </h3>
 
                         <div className="gamePlayMode">
-                            <div className="waves-effect waves-light playModeBtn"><Link to="/user/studyhall" className="playModeLink">Study Hall</Link></div>
-                            <div className="waves-effect waves-light  playModeBtn"><Link to="/user/faceoff" className="playModeLink">Face Off</Link></div>
+                            <Link to="/user/studyhall" className="playModeLink playModeBtn"><div className="waves-effect waves-light ">Study Hall</div></Link>
+                            <Link to="/user/studyhall" className="playModeLink playModeBtn"><div className="waves-effect waves-light ">Face Off</div></Link>
                         </div>
 
                     </div>
