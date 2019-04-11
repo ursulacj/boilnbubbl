@@ -14,7 +14,7 @@ class LoginPage extends Component {
 
 /*-----------------Event Handlers----------------*/ 
 
-// event to change the login/signup form's animation 
+// event to change the login/signup form's animation based on the clicked prop in state 
 handleSlideEffect = () => {    
     this.state.clicked ? this.setState({clicked: false}) : this.setState({clicked: true}); 
 }

@@ -1,6 +1,17 @@
+/*---------------------Init Defaults----------------------*/
+
 .ingredient {
     width: 100px;
     height: 100px;
     border: 2px solid black;
     margin: 25px;
 }
+
+/*---------------------On Drag Start----------------------*/
+
+.hovered {
+    border: dotted 5px black;
+}
+
+/*---------------------On Drag Over----------------------*/
+/*---------------------On Drag End----------------------*/
