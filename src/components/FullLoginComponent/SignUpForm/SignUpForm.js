@@ -14,7 +14,6 @@ class SignUpForm extends Component {
 /*------------------Event Handlers------------------*/
 
     handleChange = (e) => {
-        this.props.updateMessage('');
         this.setState({
             [e.target.name]: e.target.value
         });
@@ -24,11 +23,13 @@ class SignUpForm extends Component {
         e.preventDefault();
         try { 
             await userService.signup(this.state);
+
+            this.props.handleSignupOrLogin();
             // If successfully signed up, render user dash
-            this.props.history.push('/');
+            this.props.history.push('/user');
         } catch (err) {
             // If invalid user data, render this
-            this.props.updateMessage(err.message);
+            alert('invalid user data');
         }
     }
 

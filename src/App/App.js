@@ -4,7 +4,6 @@ import userService from '../utilities/userService';
 import './App.css';
 import HomePage from '../pages/HomePage/HomePage';
 import LoginPage from '../pages/LoginPage/LoginPage';
-import SignUpPage from '../pages/SignUpPage/SignUpPage';
 import UserDash from '../pages/UserDash/UserDash';
 import StudyHallPage from '../pages/StudyHallPage/StudyHallPage';
 import FaceOffPage from '../pages/FaceOffPage/FaceOffPage';
@@ -15,14 +14,22 @@ class App extends Component {
 
 
 /*--------------Event Handlers----------------*/
-
-handleSignupOrLogin = () => {
+// USER LOGOUT
+handleLogout = () => {
+  userService.logout();
   this.setState({ user: null });
 }
+
+// USER SIGNUP/LOGIN
+handleSignupOrLogin = () => {
+  this.setState({ user: userService.getUser()});
+}
+
 
 /*--------------Lifecycle Methods----------------*/
 async componentDidMount() {
   const user = userService.getUser();
+  this.setState({ user });
 }
 
 /*--------------Render Function----------------*/
@@ -30,28 +37,29 @@ async componentDidMount() {
   render() {
     return (
       <div className="App">
-
+        
         <Switch>
           <Route exact path='/' render={() =>
-            <HomePage />
-          } />
-
-          <Route exact path='/login' render={({ history }) =>
-            <LoginPage 
-              history={history}
-              handleSignupOrLogin={this.handleSignupOrLogin}
+            <HomePage 
+              user={this.state.user}
+              handleLogout={this.handleLogout}
             />
           } />
 
           <Route exact path='/signup' render={({ history }) =>
-            <SignUpPage 
+            <LoginPage
+              user={this.state.user}
               history={history}
               handleSignupOrLogin={this.handleSignupOrLogin}
+              handleLogout={this.handleLogout}
             />
           } />
 
           <Route exact path='/user' render={() =>
-            <UserDash />
+            <UserDash 
+              user={this.state.user}
+              handleLogout={this.handleLogout}
+            />
           } />
 
           <Route exact path='/user/studyhall' render={() =>
@@ -63,7 +71,10 @@ async componentDidMount() {
           } />
 
           <Route exact path='/user/notes' render={() =>
-            <NotesPage />
+            <NotesPage 
+              user={this.state.user}
+              handleLogout={this.handleLogout}
+              />
           } />
 
         </Switch>

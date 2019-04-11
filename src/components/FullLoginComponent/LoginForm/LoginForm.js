@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './LoginForm.css';
+import userService from '../../../utilities/userService';
 
 class LoginForm extends Component {
 
@@ -15,8 +16,18 @@ class LoginForm extends Component {
         });
     }
 
-    handleSubmit = (e) => {
+    handleSubmit = async (e) => {
         e.preventDefault();
+        try {
+            await userService.login(this.state);
+            // Let <App> know a user has signed up!
+            this.props.handleSignupOrLogin();
+            // Successfully signed up - show GamePage
+            this.props.history.push('/');
+        } catch (err) {
+            // TODO: Use a modal or toast in your apps instead of alert
+            alert('Invalid Credentials!');
+        }
     }
 
 /*------------------Render Method------------------*/

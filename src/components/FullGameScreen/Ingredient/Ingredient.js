@@ -11,7 +11,7 @@ class Ingredient extends Component {
 
 /*-------------------Event Handlers-------------------------*/
 handleDragStart = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     this.dragStart ? this.setState({dragStart: false}) : this.setState({dragStart: true});
 }
 
@@ -37,7 +37,7 @@ render() {
     const dragged = this.state.dragStart ? 'ingredient hovered' : 'ingredient';
 
     return (
-        <div className={dragged} draggable="true" onDragStart={this.handleDragStart} onDragOver={this.handleDragOver} onDrop={this.handleDrop}></div>
+        <div className={dragged} draggable="true" onDragStart={this.handleDragStart}></div>
     )
 }
 

@@ -9,7 +9,10 @@ class UserDash extends Component {
     render() {
         return(
             <div>
-                <NavBar />
+                <NavBar 
+                    user={this.props.user}
+                    handleLogout={this.props.handleLogout}
+                />
 
                 <div className="userDashWrapper">
                     <div className="playModeWrapper">

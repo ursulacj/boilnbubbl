@@ -13,7 +13,10 @@ class NotesPage extends Component {
 render() {
     return (
         <div>
-            <NavBar />
+            <NavBar 
+                user={this.props.user}
+                handleLogout={this.props.handleLogout}
+            />
             <h1>NotesPage</h1>
         </div>
     )

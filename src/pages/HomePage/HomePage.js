@@ -6,7 +6,10 @@ const HomePage = () => {
 
     return (
         <div>
-            <NavBar />
+            <NavBar 
+                user={this.props.user}
+                handleLogout={this.props.handleLogout}
+            />
             <div className= "homePageWrapper">
                 <div className="cauldronGif">
                     {/* <h1 className="siteTitle"> Boil N' Bubbl </h1> */}

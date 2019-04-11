@@ -8,8 +8,7 @@ import LoginForm from '../../components/FullLoginComponent/LoginForm/LoginForm';
 class LoginPage extends Component {
 
     state = {
-        clicked: false,
-        message: ''
+        clicked: false
     };
 
 /*-----------------Event Handlers----------------*/ 
@@ -17,15 +16,6 @@ class LoginPage extends Component {
 // event to change the login/signup form's animation based on the clicked prop in state 
 handleSlideEffect = () => {    
     this.state.clicked ? this.setState({clicked: false}) : this.setState({clicked: true}); 
-}
-
-updateMessage = (msg) => {
-    this.setState({message: msg});
-    console.log(this.state.message);
-}
-
-handleSubmit = (e) => {
-    e.preventDefault();
 }
 
 /*-----------------Render Function ----------------*/ 
@@ -36,14 +26,22 @@ handleSubmit = (e) => {
 
         return(
             <div>
-                <NavBar />
+                <NavBar 
+                    user={this.props.user}
+                    handleLogout={this.props.handleLogout}
+                />
 
                 <div className= {loginContainer}>
 
                     <SignUpForm 
-                        updateMessage={this.updateMessage}
+                        // HOW THE FUCK DO I PASS THE handleSignupOrLogin method as a prop???
+
+                        // Or do I even need to????
+                        {...this.props}
                     />
-                    <LoginForm />
+                    <LoginForm 
+                        {...this.props}
+                    />
                     <OverLayComponent 
                         handleSlideEffect={this.handleSlideEffect}
                     />
