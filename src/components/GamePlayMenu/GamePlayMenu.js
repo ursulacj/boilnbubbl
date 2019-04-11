@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './GamePlayMenu.css';
-import '../GameTimer/GameTimer';
 import InstructionModal from './InstructionModal/InstructionModal';
 import SideNav from './SideNav/SideNav';
 
