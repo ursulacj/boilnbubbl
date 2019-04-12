@@ -11,9 +11,7 @@ function signup(user) {
         if (res.ok) return res.json();
         throw new Error('Sorry! Email already taken!');
     })
-    .then(({token}) => {
-        tokenService.setToken(token);
-    });
+    .then(({token}) => tokenService.setToken(token));
 }
 
 function getUser() {

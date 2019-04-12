@@ -11,7 +11,11 @@ import NotesPage from '../pages/NotesPage/NotesPage';
 
 
 class App extends Component {
+/*--------------STATE----------------*/
 
+  state = {
+    user: null,
+  }
 
 /*--------------Event Handlers----------------*/
 // USER LOGOUT
@@ -24,7 +28,6 @@ handleLogout = () => {
 handleSignupOrLogin = () => {
   this.setState({ user: userService.getUser()});
 }
-
 
 /*--------------Lifecycle Methods----------------*/
 async componentDidMount() {
@@ -40,25 +43,22 @@ async componentDidMount() {
         
         <Switch>
           <Route exact path='/' render={() =>
-            <HomePage 
+            <HomePage
               user={this.state.user}
-              handleLogout={this.handleLogout}
             />
           } />
 
           <Route exact path='/signup' render={({ history }) =>
             <LoginPage
-              user={this.state.user}
               history={history}
               handleSignupOrLogin={this.handleSignupOrLogin}
-              handleLogout={this.handleLogout}
+              user={this.state.user}
             />
           } />
 
           <Route exact path='/user' render={() =>
-            <UserDash 
+            <UserDash
               user={this.state.user}
-              handleLogout={this.handleLogout}
             />
           } />
 
@@ -71,10 +71,9 @@ async componentDidMount() {
           } />
 
           <Route exact path='/user/notes' render={() =>
-            <NotesPage 
+            <NotesPage
               user={this.state.user}
-              handleLogout={this.handleLogout}
-              />
+            />
           } />
 
         </Switch>

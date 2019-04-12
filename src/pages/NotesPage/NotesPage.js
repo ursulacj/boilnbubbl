@@ -15,7 +15,6 @@ render() {
         <div>
             <NavBar 
                 user={this.props.user}
-                handleLogout={this.props.handleLogout}
             />
             <h1>NotesPage</h1>
         </div>

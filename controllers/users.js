@@ -6,7 +6,6 @@ const SECRET = process.env.SECRET;
 /*--------------Signup Function-----------------*/
 
 async function signup(req, res) {
-    console.log(req.body)
     const user = new User(req.body);
     try {
         await user.save();

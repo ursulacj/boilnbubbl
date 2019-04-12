@@ -2,13 +2,12 @@ import React from 'react';
 import NavBar from '../../components/NavBar/NavBar';
 import './HomePage.css';
 
-const HomePage = () => {
+const HomePage = (props) => {
 
     return (
         <div>
             <NavBar 
-                user={this.props.user}
-                handleLogout={this.props.handleLogout}
+                user={props.user}
             />
             <div className= "homePageWrapper">
                 <div className="cauldronGif">
