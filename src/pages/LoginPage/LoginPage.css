@@ -63,8 +63,8 @@
 
 .loginBtn {
     border-radius: 20px;
-    border: 1px solid rgb(103,228,194);
-    background-color: rgb(85,65,95);
+    border: 2px solid rgb(103,228,194);
+    background-color: mediumpurple;
     color: #ffffff;
     font-size: 12px;
     font-weight: bold;
