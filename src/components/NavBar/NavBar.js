@@ -25,6 +25,7 @@ render() {
                 <li><a href="/user/notes">My Notes</a></li>
             </ul>
             <ul className="right hide-on-med-and-down nav">
+                <li className="userWelcome"><a href="/user">Welcome, <span className="userName">{this.props.user.username}</span>!</a> </li>
                 <li><a href="/" onClick={this.props.handleLogout}>Log Out</a></li>
             </ul>
         </>

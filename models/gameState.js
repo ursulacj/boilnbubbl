@@ -32,7 +32,7 @@ const GameStateSchema = new Schema({
         required: false},
     baseComponent: {
         type: String,
-        required: true},
+        },
     gamePlays: [gamePlaySchema]
 }, {
     timestamps: true

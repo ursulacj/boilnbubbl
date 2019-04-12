@@ -58,8 +58,9 @@ async componentDidMount() {
             />
           } />
 
-          <Route exact path='/user' render={() =>
+          <Route exact path='/user' render={({ history }) =>
             <UserDash
+              history={history}
               user={this.state.user}
               handleLogout={this.handleLogout}
             />
