@@ -8,6 +8,7 @@ const HomePage = (props) => {
         <div>
             <NavBar 
                 user={props.user}
+                handleLogout={props.handleLogout}
             />
             <div className= "homePageWrapper">
                 <div className="cauldronGif">

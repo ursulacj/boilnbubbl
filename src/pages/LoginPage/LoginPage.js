@@ -28,6 +28,7 @@ handleSlideEffect = () => {
             <div>
                 <NavBar 
                     user={this.props.user}
+                    handleLogout={this.handleLogout.user}
                 />
 
                 <div className= {loginContainer}>

@@ -45,6 +45,7 @@ async componentDidMount() {
           <Route exact path='/' render={() =>
             <HomePage
               user={this.state.user}
+              handleLogout={this.handleLogout}
             />
           } />
 
@@ -53,12 +54,14 @@ async componentDidMount() {
               history={history}
               handleSignupOrLogin={this.handleSignupOrLogin}
               user={this.state.user}
+              handleLogout={this.handleLogout}
             />
           } />
 
           <Route exact path='/user' render={() =>
             <UserDash
               user={this.state.user}
+              handleLogout={this.handleLogout}
             />
           } />
 
@@ -73,6 +76,7 @@ async componentDidMount() {
           <Route exact path='/user/notes' render={() =>
             <NotesPage
               user={this.state.user}
+              handleLogout={this.handleLogout}
             />
           } />
 
