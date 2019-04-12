@@ -1,0 +1,41 @@
+.homePageWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.siteTitle {
+    font-size: 9vmax;
+    padding: none;
+    margin-bottom: -15px;
+    text-align: center;
+    font-family: 'Fascinate Inline', cursive;
+    background: transparent;
+}
+
+.gifDivWrapper {
+    width: 70vmax;
+    height: 70vmax;
+}
+
+.cauldronGif {
+    background: url(https://media.giphy.com/media/3o84TVYfCexBXk011u/source.gif) no-repeat center center fixed;
+    background-size: 100%;
+    margin-top: 0;
+    width: 95%;
+    height: 95%;
+}
+
+/*-------------Full Screen Styling--------------*/
+
+@media only screen and (min-width: 961px) {
+
+    .siteTitle {
+        font-size: 7vmax;
+    }
+    .cauldronGif {
+        background-size: contain;
+    }
+    
+}

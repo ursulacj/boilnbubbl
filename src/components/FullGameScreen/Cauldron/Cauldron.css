@@ -1,0 +1,9 @@
+.cauldron{
+    width: 150px;
+    height: 150px;
+    border: 6px solid black;
+    border-radius: 50%; 
+    background-color: rgb(25,25,25);
+    margin: 25px;
+    
+}
