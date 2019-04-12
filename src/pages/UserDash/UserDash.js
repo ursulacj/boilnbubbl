@@ -29,19 +29,18 @@ class UserDash extends Component {
                     <div className="playModeWrapper">
                         <h3>Select a Play Mode: </h3>
 
-
-                        <form onSubmit={this.handleSubmit}>
-                            <div className="gamePlayMode">
-                                <button>
-                                    <Link to="/user/studyhall" className="playModeLink playModeBtn waves-effect waves-light">Study Hall</Link>
-                                </button>
-                            </div>
-                        </form>
-
-
                         <div className="gamePlayMode">
-                            <Link to="#" className="playModeLink playModeBtn waves-effect waves-light">Face Off</Link>
+
+                            <form onSubmit={this.handleSubmit} className="gamePlayMode">
+                                <Link to="/user/studyhall" className=""><button className="waves-effect waves-light playModeBtn playModeLink">Study Hall</button></Link>
+                            </form>
+                            
+                            <form className="gamePlayMode">
+                                <Link to="#" className=""><button className="waves-effect waves-light playModeBtn playModeLink">Face Off</button></Link>
+                            </form>
+
                         </div>
+
 
                     </div>
                     <div className="scoreWrapper">

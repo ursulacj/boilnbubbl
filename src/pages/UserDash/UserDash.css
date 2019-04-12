@@ -16,9 +16,7 @@
     width: 80%;
 }
 
-.playModeBtn:hover {
-    background-color: mediumvioletred;
-}
+
 
 .gamePlayMode {
     display: flex;
@@ -49,6 +47,10 @@
     font-weight: 900;
     transition: .3s ease-out;
 }
+
+.playModeBtn:hover {
+    background-color: mediumvioletred;
+}   
 
 .playModeLink {
     color: white !important;
