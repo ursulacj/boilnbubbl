@@ -17,8 +17,7 @@
 }
 
 .playModeBtn:hover {
-    background-image: linear-gradient(to bottom, rgba(85,65,95, .9), mediumpurple);
-    background-color: black !important;
+    background-color: mediumvioletred;
 }
 
 .gamePlayMode {
@@ -58,5 +57,9 @@
 .scorebtn {
     background-color: rgb(238,140,252);
     margin: 5px 15px;
+}
+
+.scorebtn:hover {
+    background-color: mediumvioletred;
 }
 

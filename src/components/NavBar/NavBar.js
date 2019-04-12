@@ -20,8 +20,9 @@ render() {
     let fullScreenNav = this.props.user ? 
         <>
             <ul className="left hide-on-med-and-down nav">
+                {/*TODO: make about a modal*/} 
                 <li><a href="#">About</a></li>
-                <li><a href="#">My Notes</a></li>
+                <li><a href="/user/notes">My Notes</a></li>
             </ul>
             <ul className="right hide-on-med-and-down nav">
                 <li><a href="/" onClick={this.props.handleLogout}>Log Out</a></li>
@@ -30,6 +31,7 @@ render() {
     :
         <>
             <ul className="left hide-on-med-and-down nav">
+                {/*TODO: make about a modal*/} 
                 <li><a href="#">About</a></li>
             </ul>
             <ul className="right hide-on-med-and-down nav">

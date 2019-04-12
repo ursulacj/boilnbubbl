@@ -19,7 +19,7 @@ function getUser() {
 }
 
 function login(creds) {
-    return fetch(BASE_URL + 'signup', {
+    return fetch(BASE_URL + 'login', {
         method: 'POST',
         headers: new Headers({'Content-Type': 'application/json'}),
         body: JSON.stringify(creds)

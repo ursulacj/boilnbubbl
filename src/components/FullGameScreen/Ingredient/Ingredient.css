@@ -1,17 +1,36 @@
 /*---------------------Init Defaults----------------------*/
 
+.ingredientHolder {
+    height: 120px;
+    width: 120px;
+    margin: 10px;
+    border: solid 5px black;
+}
+
 .ingredient {
     width: 100px;
     height: 100px;
-    border: 2px solid black;
-    margin: 25px;
+    cursor: pointer;
+    margin: 5px;
 }
 
 /*---------------------On Drag Start----------------------*/
+.held {
+    border: solid 10px black;
+    background-color: black;
+}
+
+.invisible {
+    display: none;
+}
+
+/*---------------------On Drag Enter---------------------*/
 
 .hovered {
     border: dotted 5px black;
 }
+
+
 
 /*---------------------On Drag Over----------------------*/
 /*---------------------On Drag End----------------------*/

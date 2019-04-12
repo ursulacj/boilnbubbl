@@ -19,6 +19,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 // Put API routes here, before the catch all!!!
 app.use('/api/users', require('./routes/api/users'));
+app.use('/api/gameStates', require('./routes/api/gameStates'));
 
 //Catch all route that sends the client back to the index page so that the SPA router can  route it to the correct feature
 app.get('/*', function(req, res) {
