@@ -10,13 +10,9 @@ class UserDash extends Component {
 
 /*--------------Event Handlers----------------*/
 
-    handleSubmit = async (e) => {
+    handleSubmit = (e) => {
         e.preventDefault();
-        try {
-            await gameStateService();
-        } catch (err) {
-            alert('Something broke bbygirl!');
-        }
+        gameStateService.create();
         
     }
 
@@ -36,7 +32,9 @@ class UserDash extends Component {
 
                         <form onSubmit={this.handleSubmit}>
                             <div className="gamePlayMode">
-                                <Link to="/user/studyhall" className="playModeLink playModeBtn waves-effect waves-light">Study Hall</Link>
+                                <button>
+                                    <Link to="/user/studyhall" className="playModeLink playModeBtn waves-effect waves-light">Study Hall</Link>
+                                </button>
                             </div>
                         </form>
 
