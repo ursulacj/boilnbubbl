@@ -60,9 +60,12 @@ class StudyHallPage extends Component {
     }
 
     handleEndGameEarly = (e) => {
-        console.log('game ending early')
+        console.log('game ending early');
+        gameStateService.deleteGame();
         this.props.history.push('/user');
     }
+
+    
 
     handleOpenNotes = () => {
 

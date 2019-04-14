@@ -1,9 +1,14 @@
+import tokenService from './tokenService';
 const BASE_URL = '/api/gameStates';
 
 function create(username) {
     return fetch(BASE_URL, {
         method: 'POST',
-        headers: new Headers({'Content-Type': 'application/json'}),
+        headers: {
+            'Content-type': 'application/json',
+            // Add this header - don't forget the space after Bearer
+            'Authorization': 'Bearer ' + tokenService.getToken()
+        },
         body: JSON.stringify({
             gameIsOpen: true,
             gameIsSinglePlayer: true,
