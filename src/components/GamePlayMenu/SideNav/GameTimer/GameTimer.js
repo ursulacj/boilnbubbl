@@ -16,7 +16,6 @@ class GameTimer extends Component {
     }
 /*--------------Lifecycle Methods----------------*/
     componentDidMount() {
-        console.log('game timer mounted');
         this.timerId = setInterval(this.handleTick, 1000);
     }
 

@@ -10,7 +10,7 @@ class UserDash extends Component {
 
 /*--------------Event Handlers----------------*/
 
-    handleSubmit = (e) => {
+    handleNewGame = (e) => {
         e.preventDefault();
         const username = this.props.user.username;
 
@@ -18,6 +18,8 @@ class UserDash extends Component {
         this.props.history.push('/user/studyhall');
         
     }
+
+
     
 
 /*--------------Render Method----------------*/
@@ -35,7 +37,7 @@ class UserDash extends Component {
 
                         <div className="gamePlayMode">
                             
-                                <form onSubmit={this.handleSubmit} className="playModeForm">
+                                <form onSubmit={this.handleNewGame} className="playModeForm">
                                     <button type="submit" className="waves-effect waves-light playModeBtn playModeLink">Study Hall</button>
                                 </form>
                 

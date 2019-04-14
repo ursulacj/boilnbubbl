@@ -40,6 +40,7 @@ componentDidMount() {
                     elapsedTime={this.props.elapsedTime}
                     isTiming={this.props.isTiming}
                     handleTimerUpdate = {this.props.handleTimerUpdate}
+                    handleEndGameEarly = {this.props.handleEndGameEarly}
                     handleOpenNotes = {this.props.handleOpenNotes}
                     handleGamePause = {this.props.handleGamePause}
                 />

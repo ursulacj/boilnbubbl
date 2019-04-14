@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Cauldron.css'
+import cauldron from './cauldron.png';
 
 
 class Cauldron extends Component {
@@ -13,7 +14,7 @@ class Cauldron extends Component {
 render() {
     return (
         <div className="cauldronWrapper">
-            <div className="cauldronBody"></div>
+            <img src={cauldron} alt="cauldron" className="cauldronImg"/>
             <div className="baseComponentText">{this.props.baseComponent}</div>
         </div>   
     )

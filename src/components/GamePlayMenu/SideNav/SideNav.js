@@ -27,7 +27,9 @@ const SideNav = (props) => (
                 handleGamePause={props.handleGamePause}
                 isTiming={props.isTiming} 
             />
-            <EndBtnModal />
+            <EndBtnModal 
+                handleEndGameEarly={props.handleEndGameEarly}
+            />
     </div>
 )
 

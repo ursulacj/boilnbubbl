@@ -12,12 +12,23 @@ function create(req, res) {
     }
 }  
 
+/*---------On Ending Game Early-------------*/
 
+function deleteGame(req, res) {
 
+}
+
+/*---------On Win/Lose Scenario-------------*/
+
+function updateGame(req, res) {
+
+}
 
 /*--------------Exports-----------------*/
 module.exports = {
-    create
+    create,
+    deleteGame,
+    updateGame
 }
 
 

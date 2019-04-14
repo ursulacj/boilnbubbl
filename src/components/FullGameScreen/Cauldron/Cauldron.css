@@ -4,13 +4,10 @@
     align-items: center;
 }
 
-.cauldronBody {
-    width: 150px;
-    height: 150px;
-    border: 6px solid black;
-    border-radius: 50%; 
-    background-color: rgb(25,25,25);
-    margin: 25px 0 0 0;
+.cauldronImg {
+    margin-top: 40px;
+    width: 200px;
+    height: 185px;
 }
 
 .baseComponentText {

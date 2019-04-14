@@ -66,8 +66,11 @@ async componentDidMount() {
             />
           } />
 
-          <Route exact path='/user/studyhall' render={() =>
-            <StudyHallPage />
+          <Route exact path='/user/studyhall' render={({ history }) =>
+            <StudyHallPage 
+              user={this.state.user}
+              history={history}  
+            />
           } />
 
           <Route exact path='/user/faceoff' render={() =>

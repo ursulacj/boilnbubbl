@@ -1,9 +1,5 @@
 const BASE_URL = '/api/gameStates';
 
-
-// TODO: render game data conditionally using user1 and baseComponent
-
-
 function create(username) {
     return fetch(BASE_URL, {
         method: 'POST',
@@ -24,9 +20,19 @@ function create(username) {
     .catch(err => {
         console.log(err)
     })
-}
+};
+
+function deleteGame() {
+
+};
+
+function updateGame() {
+
+};
 
 
 export default {
-    create
+    create,
+    deleteGame,
+    updateGame
 }

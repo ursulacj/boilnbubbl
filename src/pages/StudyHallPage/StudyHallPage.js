@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './StudyHallPage.css'
 import GamePlayMenu from '../../components/GamePlayMenu/GamePlayMenu';
 import FullGameScreen from '../../components/FullGameScreen/FullGameScreen';
+import gameStateService  from '../../utilities/gameStateService';
 import ingredientService from '../../utilities/ingredientService';
-
 
 
 
@@ -53,6 +53,15 @@ class StudyHallPage extends Component {
 
     handleNewGameClick = () => {
         this.setState(this.getInitialState());
+
+        const username = this.props.user.username;
+        gameStateService.create(username);
+        // this.props.history.push('/user/studyhall');
+    }
+
+    handleEndGameEarly = (e) => {
+        console.log('game ending early')
+        this.props.history.push('/user');
     }
 
     handleOpenNotes = () => {
@@ -60,6 +69,7 @@ class StudyHallPage extends Component {
     }
 /*--------------Lifecycle Methods----------------*/
     componentDidMount() {
+        console.log(this.props.user.username)
         console.log(ingredientService);
         console.log(ingredientService.baseComponent);
         console.log(ingredientService.allIngredients);
@@ -85,6 +95,7 @@ class StudyHallPage extends Component {
                     isTiming={this.state.isTiming}
                     handleTimerUpdate = {this.handleTimerUpdate}
                     handleGamePause =  {this.handleGamePause}
+                    handleEndGameEarly =  {this.handleEndGameEarly}
                     handleOpenNotes = {this.handleOpenNotes}
                 />
                 <FullGameScreen 

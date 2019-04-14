@@ -12,7 +12,9 @@ const EndBtnModal = (props) =>(
             </div>
             <div className="modal-footer modalBtnFooter">
                 <Link to="#" className="modal-close waves-effect btn-flat">Resume Game</Link>
-                <Link to="#" className="modal-close waves-effect btn-flat red white-text">End Game</Link>
+                <form onSubmit={props.handleEndGameEarly}>
+                    <button type='submit' className="modal-close waves-effect btn-flat red white-text">End Game</button>
+                </form>
             </div>
         </div>
 
