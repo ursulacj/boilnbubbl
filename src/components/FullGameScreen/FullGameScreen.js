@@ -4,18 +4,17 @@ import IngredientRowContainer from './IngredientRowContainer/IngredientRowContai
 import Cauldron from './Cauldron/Cauldron';
 
 class FullGameScreen extends Component {
-/*--------------STATE----------------*/
-
+/*--------------STATE------------------------*/
 /*--------------Event Handlers----------------*/
-
-/*--------------Lifecycle Methods----------------*/
-
-/*--------------Render Method----------------*/
+/*--------------Lifecycle Methods-------------*/
+/*--------------Render Method-----------------*/
     render() {
         return (
             <div className="gameBoardWrapper">
                 <IngredientRowContainer />
-                <Cauldron />
+                <Cauldron 
+                    baseComponent = {this.props.baseComponent}
+                />
             </div>
         )
     }

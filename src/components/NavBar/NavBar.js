@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './NavBar.css';
 import logo from './CauldronIcon.png';
+import AboutModal from './AboutModal/AboutModal';
 
 
 class NavBar extends Component {
@@ -10,8 +11,11 @@ class NavBar extends Component {
 
 /*--------------Lifecycle Methods----------------*/
 componentDidMount() {
-    var elems = document.querySelectorAll('.sidenav');
+    const elems = document.querySelectorAll('.sidenav');
     window.M.Sidenav.init(elems, {});
+
+    const modal = document.querySelectorAll('.modal');
+    window.M.Modal.init(modal, {});
 }
 
 /*--------------Render Function----------------*/
@@ -20,36 +24,42 @@ render() {
     let fullScreenNav = this.props.user ? 
         <>
             <ul className="left hide-on-med-and-down nav">
-                {/*TODO: make about a modal*/} 
-                <li><a href="#">About</a></li>
+                
+                <li><a href="#AboutModal" className="modal-trigger waves-effect waves-light">About</a></li>
                 <li><a href="/user/notes">My Notes</a></li>
             </ul>
             <ul className="right hide-on-med-and-down nav">
                 <li className="userWelcome"><a href="/user">Welcome, <span className="userName">{this.props.user.username}</span>!</a> </li>
                 <li><a href="/" onClick={this.props.handleLogout}>Log Out</a></li>
             </ul>
+
+            <AboutModal />
         </>
     :
         <>
             <ul className="left hide-on-med-and-down nav">
-                {/*TODO: make about a modal*/} 
-                <li><a href="#">About</a></li>
+                <a href="#AboutModal" className="modal-trigger waves-effect waves-light">About</a>
             </ul>
             <ul className="right hide-on-med-and-down nav">
                 <li><a href="/signup">Log In/ Sign Up</a></li>
             </ul>
+
+            <AboutModal />
         </>
 
     let mobileScreenNav = this.props.user ?
         <>
-                <li className="nav"><a className="nav" href="#">Log Out</a></li>
-                <li className="nav"><a className="nav" href="#">My Notes</a></li>
-                <li className="nav"><a className="nav" href="#">About</a></li>
+                <li><a href="/" onClick={this.props.handleLogout}>Log Out</a></li>
+                <li className="nav"><a className="nav" href="/user/notes">My Notes</a></li>
+                <li><a href="#AboutModal" className="modal-trigger waves-effect waves-light">About</a></li>
+                <AboutModal />
         </>
             :
         <>
-                <li className="nav"><a className="nav" href="#">Log In/Sign Up</a></li>
-                <li className="nav"><a className="nav" href="#">About</a></li>
+                <li className="nav"><a className="nav" href="/signup">Log In/Sign Up</a></li>
+                <li><a href="#AboutModal" className="modal-trigger waves-effect waves-light">About</a></li>
+                <AboutModal />
+                
         </>
 
     return (

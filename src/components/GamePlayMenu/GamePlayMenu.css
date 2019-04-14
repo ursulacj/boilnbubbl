@@ -9,6 +9,24 @@
     margin: 25px;
 }
 
+.newGameBtn {
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+
+button.newGameBtn:focus {
+    outline: none;
+    background: none;
+}
+
+button.newGameBtn:hover, .fakeBtn:hover {
+    background-color: rgb(0,0,0, 0.15);
+    border-radius: 13px;
+    transition: .3s ease-out;
+}
+
 /*-------------768 px + Styling--------------*/
 @media only screen and (min-width: 768px) {
     .gameMenuBtn {

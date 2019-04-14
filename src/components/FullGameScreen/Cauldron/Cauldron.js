@@ -12,7 +12,10 @@ class Cauldron extends Component {
 
 render() {
     return (
-        <div className="cauldron"></div>
+        <div>
+            <div className="cauldron"></div>
+            <div>{this.props.baseComponent}</div>
+        </div>   
     )
 }
 }

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const InstructionModal = () =>(
 
     <div>
-        <a href="#instructionsModal" className="modal-trigger waves-effect waves-light"><i className="material-icons gameMenuBtn"> info</i></a>
+        <a href="#instructionsModal" className="modal-trigger waves-effect waves-light fakeBtn"><i className="material-icons gameMenuBtn">info</i></a>
         
 
         <div id="instructionsModal" className="modal">

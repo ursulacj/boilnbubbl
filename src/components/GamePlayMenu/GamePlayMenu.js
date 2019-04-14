@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './GamePlayMenu.css';
 import InstructionModal from './InstructionModal/InstructionModal';
 import SideNav from './SideNav/SideNav';
+import NewGameBtn from './NewGameBtn/NewGameBtn';
 
 
 class GamePlayMenu extends Component {
@@ -27,12 +28,17 @@ componentDidMount() {
     render() {
         return (
         <div className="gamePlayMenu">
-            <Link to="/user"><i className="material-icons gameMenuBtn">arrow_back</i></Link>
+            <Link to="/user" className='fakeBtn'><i className="material-icons gameMenuBtn">arrow_back</i></Link>
 
             <h1 className="center">Study Hall</h1>
             
+            <NewGameBtn 
+                handleNewGameClick={this.props.handleNewGameClick}/>
             <InstructionModal />
-            <SideNav />
+            <SideNav 
+                handleTimerUpdate = {this.props.handleTimerUpdate}
+                handleOpenNotes = {this.props.handleOpenNotes}
+            />
                 
         </div>
         )

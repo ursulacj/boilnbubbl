@@ -8,6 +8,8 @@ const IngredientRow = () => {
             <Ingredient />
             <Ingredient />
             <Ingredient />
+            <Ingredient />
+            <Ingredient />
         </div>
     )
 
