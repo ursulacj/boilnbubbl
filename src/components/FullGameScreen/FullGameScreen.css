@@ -3,4 +3,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: -25vmax;
+}
+
+@media only screen and (min-width: 768px) {
+    .gameBoardWrapper {
+        margin-top: -15vmax;
+    }
 }

@@ -13,7 +13,11 @@ const SideNav = (props) => (
             <li><div className="divider"></div></li>
             <li><Link to="#"><i className="material-icons" onClick={props.handleOpenNotes}>list_alt</i>Open Notes</Link></li>
             <li><div className="divider"></div></li>
-            <GameTimer handleTimerUpdate={props.handleTimerUpdate}/>
+            <GameTimer 
+                handleTimerUpdate={props.handleTimerUpdate}
+                elapsedTime={props.elapsedTime}
+                isTiming={props.isTiming}
+            />
         </ul>
 
     </div>

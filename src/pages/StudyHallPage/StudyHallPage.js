@@ -44,7 +44,7 @@ class StudyHallPage extends Component {
     }
 /*--------------Event Handlers-------------------*/
     handleTimerUpdate = () => {
-
+        this.setState((curState) => ({elapsedTime: ++curState.elapsedTime}));
     }
 
     handleNewGameClick = () => {
@@ -77,6 +77,8 @@ class StudyHallPage extends Component {
             <div>
                 <GamePlayMenu 
                     handleNewGameClick = {this.handleNewGameClick}
+                    elapsedTime={this.state.elapsedTime}
+                    isTiming={this.state.isTiming}
                     handleTimerUpdate = {this.handleTimerUpdate}
                     handleOpenNotes = {this.handleOpenNotes}
                 />

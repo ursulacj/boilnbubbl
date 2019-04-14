@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './GamePlayMenu.css';
-import InstructionModal from './InstructionModal/InstructionModal';
+import InstructionModal from './SideNav/InstructionModal/InstructionModal';
 import SideNav from './SideNav/SideNav';
-import NewGameBtn from './NewGameBtn/NewGameBtn';
+import NewGameBtn from './SideNav/NewGameBtn/NewGameBtn';
 
 
 class GamePlayMenu extends Component {
@@ -28,17 +28,21 @@ componentDidMount() {
     render() {
         return (
         <div className="gamePlayMenu">
-            <Link to="/user" className='fakeBtn'><i className="material-icons gameMenuBtn">arrow_back</i></Link>
+            <div><Link to="/user" className='fakeBtn'><i className="material-icons gameMenuBtn">arrow_back</i></Link></div>
 
-            <h1 className="center">Study Hall</h1>
+            <div><h1 className="center">Study Hall</h1></div>
             
-            <NewGameBtn 
-                handleNewGameClick={this.props.handleNewGameClick}/>
-            <InstructionModal />
-            <SideNav 
-                handleTimerUpdate = {this.props.handleTimerUpdate}
-                handleOpenNotes = {this.props.handleOpenNotes}
-            />
+            <div className="gameNavMenuRight">
+                <NewGameBtn 
+                    handleNewGameClick={this.props.handleNewGameClick}/>
+                <InstructionModal />
+                <SideNav 
+                    elapsedTime={this.props.elapsedTime}
+                    isTiming={this.props.isTiming}
+                    handleTimerUpdate = {this.props.handleTimerUpdate}
+                    handleOpenNotes = {this.props.handleOpenNotes}
+                />
+            </div>
                 
         </div>
         )

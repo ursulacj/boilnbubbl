@@ -1,21 +1,39 @@
 import React, {Component} from 'react';
 import './GameTimer.css';
 
+const formatTime = (seconds) => {
+    let mins = Math.floor(seconds / 60).toString().padStart(2,'0');
+    let secs = (seconds % 60).toString().padStart(2, '0');
+    return `${mins}:${secs}`;
+};
+
 class GameTimer extends Component {
 
 /*--------------Event Handlers----------------*/
-
+    handleTick = () => {
+        if (!this.props.isTiming) return;
+        this.props.handleTimerUpdate();
+    }
 /*--------------Lifecycle Methods----------------*/
+    componentDidMount() {
+        console.log('game timer mounted');
+        this.timerId = setInterval(this.handleTick, 1000);
+    }
+
+    componentWillUnmount() {
+        console.log('game timer unmounted');
+        clearInterval(this.timerId);
+    }
 
 /*--------------Render Function----------------*/
-render() {
-    return (
-        <div>
-            timer
-            <div>00:00</div>
-        </div>
-    )
-}
+    render() {
+        return (
+            <div className="gameTimer">
+                <p>timer</p>
+                <div>{formatTime(this.props.elapsedTime)}</div>
+            </div>
+        );
+    }
 
 }
 

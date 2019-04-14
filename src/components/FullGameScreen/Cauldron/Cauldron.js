@@ -12,9 +12,9 @@ class Cauldron extends Component {
 
 render() {
     return (
-        <div>
-            <div className="cauldron"></div>
-            <div>{this.props.baseComponent}</div>
+        <div className="cauldronWrapper">
+            <div className="cauldronBody"></div>
+            <div className="baseComponentText">{this.props.baseComponent}</div>
         </div>   
     )
 }

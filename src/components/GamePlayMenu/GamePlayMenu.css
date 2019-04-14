@@ -3,6 +3,11 @@
     justify-content: space-between;
 }
 
+.gameNavMenuRight {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
 .gameMenuBtn {
     font-size: 12vmax !important;
     color: mediumpurple;
@@ -13,6 +18,7 @@
     border: none;
     outline: none;
     background: transparent;
+    width: 136px !important;
 }
 
 
