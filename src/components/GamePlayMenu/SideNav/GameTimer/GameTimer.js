@@ -29,7 +29,7 @@ class GameTimer extends Component {
     render() {
         return (
             <div className="gameTimer">
-                <p>timer</p>
+                <i className="material-icons gameTimerIcon">alarm</i>
                 <div>{formatTime(this.props.elapsedTime)}</div>
             </div>
         );

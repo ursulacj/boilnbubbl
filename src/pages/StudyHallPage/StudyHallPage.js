@@ -47,6 +47,10 @@ class StudyHallPage extends Component {
         this.setState((curState) => ({elapsedTime: ++curState.elapsedTime}));
     }
 
+    handleGamePause = () => {
+        this.state.isTiming ? this.setState({isTiming: false}) : this.setState({isTiming: true})
+    }
+
     handleNewGameClick = () => {
         this.setState(this.getInitialState());
     }
@@ -80,6 +84,7 @@ class StudyHallPage extends Component {
                     elapsedTime={this.state.elapsedTime}
                     isTiming={this.state.isTiming}
                     handleTimerUpdate = {this.handleTimerUpdate}
+                    handleGamePause =  {this.handleGamePause}
                     handleOpenNotes = {this.handleOpenNotes}
                 />
                 <FullGameScreen 
