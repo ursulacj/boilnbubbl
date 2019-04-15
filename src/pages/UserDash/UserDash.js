@@ -11,16 +11,14 @@ class UserDash extends Component {
 /*--------------Event Handlers----------------*/
 
     handleNewGame = (e) => {
-        e.preventDefault();
         const username = this.props.user.username;
-
         gameStateService.create(username);
+        this.setState({ gameId: gameStateService.create(username) });
         this.props.history.push('/user/studyhall');
         
     }
 
 
-    
 
 /*--------------Render Method----------------*/
     render() {

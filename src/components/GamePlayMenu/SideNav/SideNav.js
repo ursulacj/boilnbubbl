@@ -12,7 +12,7 @@ const SideNav = (props) => (
         <ul id="slide-out" className="sidenav">
             <li onClick={props.handleGamePause}><a href="#pauseModal" className="modal-trigger"><i className="material-icons">pause_circle_filled</i>Pause</a></li>
             <li><div className="divider"></div></li>
-            <li><a href="#endModal" className="modal-trigger"><i className="material-icons">stop</i>End</a></li>
+            <li onClick={props.handleGamePause}><a href="#endModal" className="modal-trigger"><i className="material-icons">stop</i>End</a></li>
             <li><div className="divider"></div></li>
             <li><Link to="#"><i className="material-icons" onClick={props.handleOpenNotes}>list_alt</i>Open Notes</Link></li>
             <li><div className="divider"></div></li>
@@ -28,6 +28,8 @@ const SideNav = (props) => (
                 isTiming={props.isTiming} 
             />
             <EndBtnModal 
+                handleGamePause={props.handleGamePause}
+                isTiming={props.isTiming} 
                 handleEndGameEarly={props.handleEndGameEarly}
             />
     </div>

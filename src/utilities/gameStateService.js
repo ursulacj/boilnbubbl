@@ -16,6 +16,18 @@ function create(username) {
         })
     })
     .then(res => {
+        if (res.ok) return res.json()
+    })
+    .catch(err => {
+        console.log(err)
+    })
+};
+
+function deleteGame() {
+    return fetch(BASE_URL + '/:id', {
+        method: 'DELETE',
+    })
+    .then(res => {
         console.log(res)
         return res.json()
         // if(res.ok) return res.json();
@@ -25,10 +37,6 @@ function create(username) {
     .catch(err => {
         console.log(err)
     })
-};
-
-function deleteGame() {
-
 };
 
 function updateGame() {

@@ -10,7 +10,4 @@ router.put('/:id', gameStatesCtrl.updateGame);
 router.delete('/:id', gameStatesCtrl.deleteGame);
 
 
-
-
-
 module.exports = router;

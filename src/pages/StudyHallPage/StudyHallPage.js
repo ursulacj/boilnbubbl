@@ -51,7 +51,8 @@ class StudyHallPage extends Component {
         this.state.isTiming ? this.setState({isTiming: false}) : this.setState({isTiming: true})
     }
 
-    handleNewGameClick = () => {
+    handleNewGameClick = (e) => {
+        e.preventDefault();
         this.setState(this.getInitialState());
 
         const username = this.props.user.username;
@@ -60,12 +61,16 @@ class StudyHallPage extends Component {
     }
 
     handleEndGameEarly = (e) => {
+        e.preventDefault();
+
         console.log('game ending early');
         gameStateService.deleteGame();
         this.props.history.push('/user');
     }
 
-    
+    handleWinOrLoss = (e) => {
+        //this will handle the update function on the DB!
+    }
 
     handleOpenNotes = () => {
 

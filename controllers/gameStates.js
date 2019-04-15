@@ -12,10 +12,15 @@ function create(req, res) {
     }
 }  
 
-/*---------On Ending Game Early-------------*/
+/*---------On Ending Game Early -------------*/
 
 function deleteGame(req, res) {
-
+    GameState.findByIdAndRemove(req.params.id, function(err, game) {
+        if (err) return res.status(500).send(err);
+        const response = {
+            message: "Note successfully deleted",
+        };
+    });
 }
 
 /*---------On Win/Lose Scenario-------------*/
@@ -30,5 +35,3 @@ module.exports = {
     deleteGame,
     updateGame
 }
-
-

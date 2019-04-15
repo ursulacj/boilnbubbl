@@ -20,7 +20,7 @@ componentDidMount() {
         edge: 'right'
     });
     const modal = document.querySelectorAll('.modal');
-    window.M.Modal.init(modal, {});
+    window.M.Modal.init(modal, {dismissible: false});
 }
 
 /*--------------Render Function----------------*/
