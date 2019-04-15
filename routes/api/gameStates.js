@@ -6,8 +6,9 @@ const gameStatesCtrl  = require('../../controllers/gameStates');
 /*----------Protected Routes------------------*/
 
 router.post('/', gameStatesCtrl.create);
+router.get('/', gameStatesCtrl.newGameStart);
+router.delete('/delete', gameStatesCtrl.deleteGame);
 router.put('/:id', gameStatesCtrl.updateGame);
-router.delete('/:id', gameStatesCtrl.deleteGame);
 
 
 module.exports = router;

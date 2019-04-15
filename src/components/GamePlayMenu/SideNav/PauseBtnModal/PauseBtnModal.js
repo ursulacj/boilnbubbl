@@ -11,8 +11,7 @@ const PauseBtnModal = (props) =>(
                 <h4 className="center">Game Paused</h4>
             </div>
             <div className="modal-footer modalBtnFooter">
-                <Link to="#" className="modal-close waves-effect btn-flat" onClick={props.handleGamePause}>Resume Game</Link>
-                <Link to="#" className="modal-close waves-effect btn-flat red white-text">End Game</Link>
+                <Link to="#" className="modal-close waves-effect btn-flat red white-text" onClick={props.handleGamePause}>Resume Game</Link>
             </div>
         </div>
 
