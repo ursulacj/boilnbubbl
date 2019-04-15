@@ -1,18 +1,31 @@
+import tokenService from './tokenService';
 const BASE_URL = '/api/gameStates';
-
-
-// TODO: render game data conditionally using user1 and baseComponent
-
 
 function create(username) {
     return fetch(BASE_URL, {
         method: 'POST',
-        headers: new Headers({'Content-Type': 'application/json'}),
+        headers: {
+            'Content-type': 'application/json',
+            // Add this header - don't forget the space after Bearer
+            'Authorization': 'Bearer ' + tokenService.getToken()
+        },
         body: JSON.stringify({
             gameIsOpen: true,
             gameIsSinglePlayer: true,
             user1: username
         })
+    })
+    .then(res => {
+        if (res.ok) return res.json()
+    })
+    .catch(err => {
+        console.log(err)
+    })
+};
+
+function deleteGame() {
+    return fetch(BASE_URL + '/:id', {
+        method: 'DELETE',
     })
     .then(res => {
         console.log(res)
@@ -24,9 +37,15 @@ function create(username) {
     .catch(err => {
         console.log(err)
     })
-}
+};
+
+function updateGame() {
+
+};
 
 
 export default {
-    create
+    create,
+    deleteGame,
+    updateGame
 }

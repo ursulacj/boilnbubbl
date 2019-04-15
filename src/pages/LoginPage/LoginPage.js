@@ -38,7 +38,7 @@ handleSlideEffect = () => {
 
                         // Or do I even need to????
                         {...this.props}
-                    />
+                    /> 
                     <LoginForm 
                         {...this.props}
                     />

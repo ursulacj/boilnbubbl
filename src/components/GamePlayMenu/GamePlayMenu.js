@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './GamePlayMenu.css';
-import InstructionModal from './InstructionModal/InstructionModal';
+import InstructionModal from './SideNav/InstructionModal/InstructionModal';
 import SideNav from './SideNav/SideNav';
+import NewGameBtn from './SideNav/NewGameBtn/NewGameBtn';
 
 
 class GamePlayMenu extends Component {
@@ -19,7 +20,7 @@ componentDidMount() {
         edge: 'right'
     });
     const modal = document.querySelectorAll('.modal');
-    window.M.Modal.init(modal, {});
+    window.M.Modal.init(modal, {dismissible: false});
 }
 
 /*--------------Render Function----------------*/
@@ -27,12 +28,23 @@ componentDidMount() {
     render() {
         return (
         <div className="gamePlayMenu">
-            <Link to="/user"><i className="material-icons gameMenuBtn">arrow_back</i></Link>
+            <div><Link to="/user" className='fakeBtn'><i className="material-icons gameMenuBtn">arrow_back</i></Link></div>
 
-            <h1 className="center">Study Hall</h1>
+            <div><h1 className="center">Study Hall</h1></div>
             
-            <InstructionModal />
-            <SideNav />
+            <div className="gameNavMenuRight">
+                <NewGameBtn 
+                    handleNewGameClick={this.props.handleNewGameClick}/>
+                <InstructionModal />
+                <SideNav 
+                    elapsedTime={this.props.elapsedTime}
+                    isTiming={this.props.isTiming}
+                    handleTimerUpdate = {this.props.handleTimerUpdate}
+                    handleEndGameEarly = {this.props.handleEndGameEarly}
+                    handleOpenNotes = {this.props.handleOpenNotes}
+                    handleGamePause = {this.props.handleGamePause}
+                />
+            </div>
                 
         </div>
         )

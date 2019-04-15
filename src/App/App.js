@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import userService from '../utilities/userService';
 import './App.css';
 import HomePage from '../pages/HomePage/HomePage';
@@ -49,7 +49,7 @@ async componentDidMount() {
             />
           } />
 
-          <Route exact path='/signup' render={({ history }) =>
+          <Route exact path='/signup' render={({ history }) => 
             <LoginPage
               history={history}
               handleSignupOrLogin={this.handleSignupOrLogin}
@@ -58,28 +58,43 @@ async componentDidMount() {
             />
           } />
 
-          <Route exact path='/user' render={({ history }) =>
-            <UserDash
-              history={history}
-              user={this.state.user}
-              handleLogout={this.handleLogout}
-            />
-          } />
+          <Route exact path='/user' render={({ history }) => (
+            userService.getUser() ?
+              <UserDash
+                history={history}
+                user={this.state.user}
+                handleLogout={this.handleLogout}
+              />
+              :
+              <Redirect to='/signup' />
+          )} />
 
-          <Route exact path='/user/studyhall' render={() =>
-            <StudyHallPage />
-          } />
+          <Route exact path='/user/studyhall' render={({ history }) => (
+            userService.getUser() ?
+              <StudyHallPage 
+                user={this.state.user}
+                history={history}  
+              />
+              :
+              <Redirect to='/signup' />
+          )} />
 
-          <Route exact path='/user/faceoff' render={() =>
-            <FaceOffPage />
-          } />
+          <Route exact path='/user/faceoff' render={() => (
+            userService.getUser() ?
+              <FaceOffPage />
+              :
+              <Redirect to='/signup' />
+          )} />
 
-          <Route exact path='/user/notes' render={() =>
-            <NotesPage
-              user={this.state.user}
-              handleLogout={this.handleLogout}
-            />
-          } />
+          <Route exact path='/user/notes' render={() => (
+            userService.getUser() ? 
+              <NotesPage
+                user={this.state.user}
+                handleLogout={this.handleLogout}
+              />
+            :
+            <Redirect to='/signup' />
+          )} />
 
         </Switch>
       </div>

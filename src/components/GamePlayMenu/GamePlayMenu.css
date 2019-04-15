@@ -3,10 +3,34 @@
     justify-content: space-between;
 }
 
+.gameNavMenuRight {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
 .gameMenuBtn {
     font-size: 12vmax !important;
     color: mediumpurple;
     margin: 25px;
+}
+
+.newGameBtn {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 136px !important;
+}
+
+
+button.newGameBtn:focus {
+    outline: none;
+    background: none;
+}
+
+button.newGameBtn:hover, .fakeBtn:hover {
+    background-color: rgb(0,0,0, 0.15);
+    border-radius: 13px;
+    transition: .3s ease-out;
 }
 
 /*-------------768 px + Styling--------------*/
