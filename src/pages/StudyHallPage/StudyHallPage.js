@@ -11,21 +11,18 @@ class StudyHallPage extends Component {
 /*-----------------STATE-------------------------*/
     state = {
         ...this.getInitialState(),
+        activeIngredients: [],
+        stableFormula: [],
+        numNeeded: []
     }
 /*--------------Game Logic--------------------*/
     getInitialState() {
         return {
-            guesses: [this.getNewGuess()],
-            activeIngredients: [],
-            itemsInCauldron: [],
             baseComponent: this.getNewBaseComponent(),
+            itemsInCauldron: [],
             elapsedTime: 0,
             isTiming: true
         }
-    }
-
-    getActiveIngredient() {
-
     }
 
     //return the name of the base component so it can be passed down, rendered visually, and used to check the win/lose scenario
@@ -37,18 +34,85 @@ class StudyHallPage extends Component {
         }
         return randomBaseComponentName();
 
-    }
+    };
 
-    getNewGuess() {
+    getActiveIngredient() {
+        const stableFormula = ingredientService.baseComponent[this.state.baseComponent];
+        const allIngredients = ingredientService.allIngredients;
 
-    }
+        // this function is selecting random indices from testArr
+        // this function would allow you to change the difficulty setting by lowering the number from 9 to 7, to 5 etc...
+        let testTwo = new Array(9).fill().map(arrItem => Math.floor(Math.random() * stableFormula.length));
+        // this function uses the random indices and maps them to values in testArr so that they can be checked against the allIngredients array
+        const testFour = testTwo.map(arrItem => stableFormula[arrItem]);
+        // this function returns a set object with all the unique values from testFour
+        const testFive = [...new Set(testFour)];
+        // this function gives the number of additional values you need to populate a new active ingredient array with 10 values 
+        let numberNeeded = 10 - testFive.length;
+        // this function gives all values in allIngredients that AREN'T in stableFormula
+        const thirdArr = allIngredients.filter(val => !stableFormula.includes(val));
+        // this function loops thru thirdArr and randomly selects the number of remaining values needed to create an active ingredients array with exactly 10 values 
+        let secondArrIdxFunction = () => {
+            let finalArr = [];
+            for (let i=0; i < numberNeeded; i++) {
+            let randomIdx = Math.floor(Math.random() * thirdArr.length);
+            // TODO: add a section in here that says if the random number is already in finalArr DON'T add it, else, add it
+            finalArr.push(randomIdx);
+            }
+            return finalArr;
+        }
+        // this assigns the result of secondArrIdxFunction to a var
+        const secondArrIdxs = secondArrIdxFunction();
+        // this changes the indices to array values
+        const secondArrVals = secondArrIdxs.map(arrItem => thirdArr[arrItem]);
+        // this concatenates testFive and secondArrVals to give the array of active ingredients 
+        const activeIngredients = testFive.concat(secondArrVals);
+
+        return activeIngredients;
+    };
+
+    // getStableNumNeeded() {
+    //     const stableFormula = this.state.stableFormula;
+    //     const activeIngredients = this.state.activeIngredients;
+
+    //     const stableIngredients = activeIngredients.filter(val => stableFormula.includes(val));
+    //     return stableIngredients.length();
+    // };
+
+
 /*--------------Event Handlers-------------------*/
+    
+    handleIngredientDrop = () => {
+
+        // on drop grab the item's key 
+        // if stableFormula doesn't include item: 
+        // trigger some modal/prompt that they lost
+        // else 
+        // push the item into itemsInCauldron array
+        // remove item from activeIngredients array
+        
+        // if itemsInCauldron.length === numStableNeeded, trigger win
+
+
+        this.setState({
+            // TODO: write this set state function
+            activeIngredients: 'someArr',
+            itemsInCauldron: 'someArr',
+        })
+    }
+
+    handleWinOrLoss = (e) => {
+        // this function triggers the DB update 
+        // gameIsOpen gets set to false
+    }
+
     handleTimerUpdate = () => {
         this.setState((curState) => ({elapsedTime: ++curState.elapsedTime}));
     }
 
     handleGamePause = () => {
-        this.state.isTiming ? this.setState({isTiming: false}) : this.setState({isTiming: true})
+        this.state.isTiming ? this.setState({isTiming: false}) : this.setState({isTiming: true});
+
     }
 
     handleNewGameClick = (e) => {
@@ -62,15 +126,12 @@ class StudyHallPage extends Component {
 
     handleEndGameEarly = (e) => {
         e.preventDefault();
-
         console.log('game ending early');
+        
         gameStateService.deleteGame();
         this.props.history.push('/user');
     }
 
-    handleWinOrLoss = (e) => {
-        //this will handle the update function on the DB!
-    }
 
     handleOpenNotes = () => {
 
@@ -83,9 +144,13 @@ class StudyHallPage extends Component {
         console.log(ingredientService.allIngredients);
         // this is how I'll access the stable formula!!!!!!!
         console.log(ingredientService.baseComponent[this.state.baseComponent]);
+
+        this.setState({activeIngredients: this.getActiveIngredient()});
+        this.setState({stableFormula: ingredientService.baseComponent[this.state.baseComponent]});
+        
     }
 
-    componentDidUpdate() {
+    componentWillUpdate() {
 
     }
 
@@ -108,6 +173,7 @@ class StudyHallPage extends Component {
                 />
                 <FullGameScreen 
                     baseComponent = {this.state.baseComponent}
+                    activeIngredients={this.state.activeIngredients}
                 />
                 
             </div>

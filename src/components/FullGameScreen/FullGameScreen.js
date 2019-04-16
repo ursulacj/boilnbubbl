@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './FullGameScreen.css';
-import IngredientRowContainer from './IngredientRowContainer/IngredientRowContainer';
+import IngredientContainer from './IngredientContainer/IngredientContainer';
 import Cauldron from './Cauldron/Cauldron';
 
 class FullGameScreen extends Component {
@@ -11,7 +11,9 @@ class FullGameScreen extends Component {
     render() {
         return (
             <div className="gameBoardWrapper">
-                <IngredientRowContainer />
+                <IngredientContainer 
+                    activeIngredients={this.props.activeIngredients}
+                />
                 <Cauldron 
                     baseComponent = {this.props.baseComponent}
                 />
