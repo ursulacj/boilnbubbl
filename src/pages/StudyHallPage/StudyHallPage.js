@@ -13,14 +13,13 @@ class StudyHallPage extends Component {
         ...this.getInitialState(),
         activeIngredients: [],
         stableFormula: [],
+        numNeeded: []
     }
 /*--------------Game Logic--------------------*/
     getInitialState() {
         return {
-            guesses: [this.getNewGuess()],
-            activeIngredients: [],
-            itemsInCauldron: [],
             baseComponent: this.getNewBaseComponent(),
+            itemsInCauldron: [],
             elapsedTime: 0,
             isTiming: true
         }
@@ -35,7 +34,7 @@ class StudyHallPage extends Component {
         }
         return randomBaseComponentName();
 
-    }
+    };
 
     getActiveIngredient() {
         const stableFormula = ingredientService.baseComponent[this.state.baseComponent];
@@ -70,24 +69,41 @@ class StudyHallPage extends Component {
         const activeIngredients = testFive.concat(secondArrVals);
 
         return activeIngredients;
-    }
+    };
 
-    mapActiveIngredient() {
+    // getStableNumNeeded() {
+    //     const stableFormula = this.state.stableFormula;
+    //     const activeIngredients = this.state.activeIngredients;
 
-    }
+    //     const stableIngredients = activeIngredients.filter(val => stableFormula.includes(val));
+    //     return stableIngredients.length();
+    // };
 
-    getNewGuess() {
-
-    }
 
 /*--------------Event Handlers-------------------*/
     
     handleIngredientDrop = () => {
 
+        // on drop grab the item's key 
+        // if stableFormula doesn't include item: 
+        // trigger some modal/prompt that they lost
+        // else 
+        // push the item into itemsInCauldron array
+        // remove item from activeIngredients array
+        
+        // if itemsInCauldron.length === numStableNeeded, trigger win
+
+
+        this.setState({
+            // TODO: write this set state function
+            activeIngredients: 'someArr',
+            itemsInCauldron: 'someArr',
+        })
     }
 
     handleWinOrLoss = (e) => {
-        
+        // this function triggers the DB update 
+        // gameIsOpen gets set to false
     }
 
     handleTimerUpdate = () => {
@@ -95,7 +111,8 @@ class StudyHallPage extends Component {
     }
 
     handleGamePause = () => {
-        this.state.isTiming ? this.setState({isTiming: false}) : this.setState({isTiming: true})
+        this.state.isTiming ? this.setState({isTiming: false}) : this.setState({isTiming: true});
+
     }
 
     handleNewGameClick = (e) => {
@@ -125,15 +142,15 @@ class StudyHallPage extends Component {
         console.log(ingredientService);
         console.log(ingredientService.baseComponent);
         console.log(ingredientService.allIngredients);
-
         // this is how I'll access the stable formula!!!!!!!
         console.log(ingredientService.baseComponent[this.state.baseComponent]);
+
         this.setState({activeIngredients: this.getActiveIngredient()});
         this.setState({stableFormula: ingredientService.baseComponent[this.state.baseComponent]});
-
+        
     }
 
-    componentDidUpdate() {
+    componentWillUpdate() {
 
     }
 

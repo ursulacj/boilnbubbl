@@ -18,7 +18,6 @@
     margin: 10px;
     border: solid 5px black;
     text-align: center;
-    cursor: grab;
 }
 
 .ingredient {
@@ -28,9 +27,7 @@
 }
 
 /*---------------------On Drag Start----------------------*/
-.held {
-    cursor: grabbing;
-}
+
 
 .invisible {
     display: none;
