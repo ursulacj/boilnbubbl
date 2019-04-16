@@ -19,8 +19,20 @@ class Cauldron extends Component {
         e.preventDefault();
         let data = e.dataTransfer.getData("text/plain");
         console.log(data)
+
+        const stableFormula = this.props.stableFormula;
+        const activeIngredients = this.props.activeIngredients;
+
+        console.log(stableFormula)
+        console.log(activeIngredients)
+
+        // // this data value comes from handleDrop's data var
+        if (!stableFormula.includes(activeIngredients[data])) {
+            console.log('Better luck next time!');
+        }  else {
+            console.log('ingredient accepted');
+        }
         
-        // e.target.appendChild(document.getElementById(data));
     }
 /*--------------Render Function----------------*/
 

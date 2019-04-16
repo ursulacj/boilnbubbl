@@ -18,6 +18,7 @@ class FullGameScreen extends Component {
                     baseComponent={this.props.baseComponent}
                     stableFormula={this.props.stableFormula}
                     handleIngredientDrop={this.props.handleIngredientDrop}
+                    activeIngredients={this.props.activeIngredients}
                 />
             </div>
         )

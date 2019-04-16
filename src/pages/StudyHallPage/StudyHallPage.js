@@ -83,8 +83,17 @@ class StudyHallPage extends Component {
 /*--------------Event Handlers-------------------*/
     
     handleIngredientDrop = () => {
+        // this function is called INSIDE the cauldron component's handleDrop method so that it's only triggered when the ingredient is dropped
+        // const stableFormula = this.state.stableFormula;
+        // const activeIngredients = this.state.activeIngredients;
 
-        // on drop grab the item's key 
+        // // this data value comes from handleDrop's data var
+        // if (!stableFormula.includes(data)) {
+        //     console.log('Better luck next time!');
+        // }  else {
+        //     console.log('ingredient accepted');
+        // }
+
         // if stableFormula doesn't include item: 
         // trigger some modal/prompt that they lost
         // else 
@@ -94,11 +103,10 @@ class StudyHallPage extends Component {
         // if itemsInCauldron.length === numStableNeeded, trigger win
 
 
-        this.setState({
-            // TODO: write this set state function
-            activeIngredients: 'someArr',
-            itemsInCauldron: 'someArr',
-        })
+        // this.setState({
+        //     activeIngredients: 'someArr',
+        //     itemsInCauldron: 'someArr',
+        // })
     }
 
     handleWinOrLoss = (e) => {
