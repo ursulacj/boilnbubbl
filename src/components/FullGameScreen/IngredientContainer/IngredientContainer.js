@@ -11,7 +11,8 @@ state = {
 
 /*-------------------Event Handlers-------------------------*/
 handleDragStart = (e) => {
-    e.dataTransfer.setData('text/plain', e.target.innerHTML);
+    e.dataTransfer.setData('text/plain', e.target.id);
+    console.log(e.target.id);
     let potionImg = new Image();
     potionImg.src = {potion};
     e.dataTransfer.setDragImage(potionImg, 5, 5);
@@ -32,7 +33,7 @@ handleDragEnd = () => {
             <div className="ingredientRowWrap">
                 {
                     this.props.activeIngredients.map((ingredient, idx) => (
-                        <div className={`${hover}`} draggable="true" onDragStart={this.handleDragStart} onDragEnd={this.handleDragEnd} key={idx}>
+                        <div className={`${hover}`} draggable="true" onDragStart={this.handleDragStart} onDragEnd={this.handleDragEnd} id={idx} key={idx}>
                             {ingredient}   
                         </div>
                     ))

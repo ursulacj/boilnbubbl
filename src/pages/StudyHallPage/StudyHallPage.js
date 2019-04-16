@@ -13,13 +13,11 @@ class StudyHallPage extends Component {
         ...this.getInitialState(),
         activeIngredients: [],
         stableFormula: [],
-        numNeeded: []
     }
 /*--------------Game Logic--------------------*/
     getInitialState() {
         return {
             baseComponent: this.getNewBaseComponent(),
-            itemsInCauldron: [],
             elapsedTime: 0,
             isTiming: true
         }
@@ -71,34 +69,11 @@ class StudyHallPage extends Component {
         return activeIngredients;
     };
 
-    // getStableNumNeeded() {
-    //     const stableFormula = this.state.stableFormula;
-    //     const activeIngredients = this.state.activeIngredients;
-
-    //     const stableIngredients = activeIngredients.filter(val => stableFormula.includes(val));
-    //     return stableIngredients.length();
-    // };
-
 
 /*--------------Event Handlers-------------------*/
     
     handleIngredientDrop = () => {
-
-        // on drop grab the item's key 
-        // if stableFormula doesn't include item: 
-        // trigger some modal/prompt that they lost
-        // else 
-        // push the item into itemsInCauldron array
-        // remove item from activeIngredients array
-        
-        // if itemsInCauldron.length === numStableNeeded, trigger win
-
-
-        this.setState({
-            // TODO: write this set state function
-            activeIngredients: 'someArr',
-            itemsInCauldron: 'someArr',
-        })
+        // this function
     }
 
     handleWinOrLoss = (e) => {
