@@ -7,7 +7,6 @@ class Cauldron extends Component {
 
 /*-------------------State-------------------*/
     state = {
-        numStableNeeded: [],
         itemsInCauldron: []
     }
 
@@ -36,14 +35,22 @@ class Cauldron extends Component {
             itemsInCauldronCopy.push(activeIngredients[data]);
             console.log(itemsInCauldronCopy);
 
-            this.setState({itemsInCauldron: itemsInCauldronCopy}, );
+            this.setState({itemsInCauldron: itemsInCauldronCopy});
+
+            // if itemsInCauldron.length === numStableNeeded, trigger win
+            let numStableNeeded = this.getNumNeeded();
+            let itemsInCauldron = this.state.itemsInCauldron;
+            console.log(itemsInCauldron.length);
+
+            if (itemsInCauldron.length === numStableNeeded) {
+                alert('congrats! you beat the odds! you mastered this challenge!')
+            }
 
             // remove item from activeIngredients array by using this.props.handleIngredientDrop()
         }
 
         
         
-        // if itemsInCauldron.length === numStableNeeded, trigger win
         
     }
     
