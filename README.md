@@ -48,10 +48,10 @@ Project Planning Tools    |   Work Logs   |   Expansion Plans
 
 ## boilnbubbl screenshots
 
-![ScreenShot1]('../public/screenshots/boilnbubbl1.png')
-![ScreenShot2]('../public/screenshots/boilnbubbl2.png')
-![ScreenShot3]('../public/screenshots/boilnbubbl3.png')
-![ScreenShot4]('../public/screenshots/boilnbubbl4.png')
+![ScreenShot1](screenshots/boilnbubbl1.png?raw=true "ScreenShot1")
+![ScreenShot2](screenshots/boilnbubbl2.png?raw=true "ScreenShot2")
+![ScreenShot3](screenshots/boilnbubbl3.png?raw=true "ScreenShot3")
+![ScreenShot4](screenshots/boilnbubbl4.png?raw=true "ScreenShot4")
 
 
 
