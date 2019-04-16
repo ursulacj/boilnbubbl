@@ -11,7 +11,6 @@ state = {
 
 /*-------------------Event Handlers-------------------------*/
 handleDragStart = (e) => {
-    console.log(e.target.innerHTML);
     e.dataTransfer.setData('text/plain', e.target.innerHTML);
     let potionImg = new Image();
     potionImg.src = {potion};

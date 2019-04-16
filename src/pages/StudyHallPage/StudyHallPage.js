@@ -174,6 +174,8 @@ class StudyHallPage extends Component {
                 <FullGameScreen 
                     baseComponent = {this.state.baseComponent}
                     activeIngredients={this.state.activeIngredients}
+                    handleIngredientDrop={this.handleIngredientDrop}
+                    stableFormula={this.state.stableFormula}
                 />
                 
             </div>

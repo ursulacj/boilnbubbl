@@ -17,7 +17,9 @@ class Cauldron extends Component {
 
     handleDrop = (e) => {
         e.preventDefault();
-        // var data = e.dataTransfer.getData("text/plain");
+        let data = e.dataTransfer.getData("text/plain");
+        console.log(data)
+        
         // e.target.appendChild(document.getElementById(data));
     }
 /*--------------Render Function----------------*/

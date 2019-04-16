@@ -15,7 +15,9 @@ class FullGameScreen extends Component {
                     activeIngredients={this.props.activeIngredients}
                 />
                 <Cauldron 
-                    baseComponent = {this.props.baseComponent}
+                    baseComponent={this.props.baseComponent}
+                    stableFormula={this.props.stableFormula}
+                    handleIngredientDrop={this.props.handleIngredientDrop}
                 />
             </div>
         )
