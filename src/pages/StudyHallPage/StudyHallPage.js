@@ -72,10 +72,24 @@ class StudyHallPage extends Component {
         return activeIngredients;
     }
 
+    mapActiveIngredient() {
+
+    }
+
     getNewGuess() {
 
     }
+
 /*--------------Event Handlers-------------------*/
+    
+    handleIngredientDrop = () => {
+
+    }
+
+    handleWinOrLoss = (e) => {
+        
+    }
+
     handleTimerUpdate = () => {
         this.setState((curState) => ({elapsedTime: ++curState.elapsedTime}));
     }
@@ -101,9 +115,6 @@ class StudyHallPage extends Component {
         this.props.history.push('/user');
     }
 
-    handleWinOrLoss = (e) => {
-        //this will handle the update function on the DB!
-    }
 
     handleOpenNotes = () => {
 
@@ -145,6 +156,7 @@ class StudyHallPage extends Component {
                 />
                 <FullGameScreen 
                     baseComponent = {this.state.baseComponent}
+                    activeIngredients={this.state.activeIngredients}
                 />
                 
             </div>

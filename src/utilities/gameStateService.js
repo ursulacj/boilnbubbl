@@ -28,22 +28,14 @@ function create(username) {
 /*----------- On New Game Start -------------*/
 
 function newGameStart() {
-    return fetch(BASE_URL, {
+    const options = {
         method: 'GET',
         headers: {
-            'Content-type': 'application/json',
-            // Add this header - don't forget the space after Bearer
             'Authorization': 'Bearer ' + tokenService.getToken()
-        },
-        body: JSON.stringify({
-
-        })
-    })
-    .then(res => {
+        }
+    }
+    return fetch(BASE_URL, options).then(res => {
         if (res.ok) return res.json()
-    })
-    .catch(err => {
-        console.log(err)
     })
 }
 

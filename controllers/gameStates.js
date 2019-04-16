@@ -16,14 +16,16 @@ function create(req, res) {
 /*----------- On New Game Start -------------*/
 
 function newGameStart(req, res) {
-
+    // TODO: fix this to search for the db id of the last game that was created
+    const newGame = GameState.findById({});
+    res.json(newGame);
 }
 
 
 /*---------On Ending Game Early -------------*/
 
 function deleteGame(req, res) {
-    GameState.deleteOne({gameIsOpen: true}, function(err, game) {
+    GameState.findByIdAndDelete({gameIsOpen: true}, function(err, game) {
         console.log(req.body)
 
         if (err) return res.status(500).send(err);

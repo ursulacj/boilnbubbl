@@ -1,23 +1,35 @@
 /*---------------------Init Defaults----------------------*/
 
+.ingredientRowWrap {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    justify-content: center;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    height: 250px;
+    width: 50vmax;
+}
+
 .ingredientHolder {
     height: 120px;
     width: 120px;
     margin: 10px;
     border: solid 5px black;
+    text-align: center;
+    cursor: grab;
 }
 
 .ingredient {
     width: 100px;
     height: 100px;
-    cursor: pointer;
     margin: 5px;
 }
 
 /*---------------------On Drag Start----------------------*/
 .held {
-    border: solid 10px black;
-    background-color: black;
+    cursor: grabbing;
 }
 
 .invisible {
@@ -29,7 +41,6 @@
 .hovered {
     border: dotted 5px black;
 }
-
 
 
 /*---------------------On Drag Over----------------------*/
